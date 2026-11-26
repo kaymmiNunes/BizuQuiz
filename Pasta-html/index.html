@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genio quiz</title>
+    <title>Bizu Quiz</title>
     <link rel="stylesheet" href="style-bruno.css">
 </head>
 
@@ -24,7 +24,7 @@
     <h2 class="created-by">@Create by Bizurados☝️🥸</h2>
 
     <!-- Adicionamos "autoplay" e "muted" para forçar o navegador a aceitar o início automático -->
-    <audio id="musica" src="../songs/Naruto - Konohamaru's Theme (128 kbps).mp3" loop autoplay muted></audio>
+    <audio id="musica" src="../songs/Naruto%20-%20Konohamaru%27s%20Theme%20(128%20kbps).mp3" loop autoplay muted></audio>
 
     <script>
         const musica = document.getElementById("musica");
@@ -37,7 +37,7 @@
         
         function ativarVolume() {
             musica.muted = false; // Desmuta a música
-            musica.play();        // Garante que está tocando
+            musica.play().catch(() => {});        // Garante que está tocando
             
             // Remove os eventos para não ficar rodando toda hora
             document.removeEventListener('click', ativarVolume);

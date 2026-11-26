@@ -132,7 +132,7 @@
       
       <div class="visual" aria-hidden="true">
        
-        <img src="ninguem sabe oq se passa na mente do palhaço.png" alt="Ilustração de erro" />
+        <img src="ninguem%20sabe%20oq%20se%20passa%20na%20mente%20do%20palha%C3%A7o.png" alt="Ilustração de erro" />
        
         
       </div>
@@ -154,7 +154,7 @@
     (function () {
       const goToStart = () => {
         // Usamos location.replace para evitar manter esta página no histórico
-        location.replace('../../../Questoes/Português/portugues.html');
+        location.replace('portugues.html');
       };
 
       const goToIndex = () => {
@@ -178,22 +178,15 @@
   </script>
 </body>
 
- <audio id="efeito" src="../../songs/Fail 1.mp3"></audio>
-
-    <audio id="musica" src="" loop></audio>
+ <audio id="efeito" src="../../songs/Fail%201.mp3"></audio>
 
 <script>
 
 window.onload = async () => {
 
     const efeito = document.getElementById("efeito");
-    const musica = document.getElementById("musica");
 
-    await efeito.play();
-
-    efeito.onended = () => {
-        musica.play();
-    }
+    await efeito.play().catch(() => {});
 
 }
 
