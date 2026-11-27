@@ -1,28 +1,31 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8" />
     <title>MATEMÁTICA</title>
-    <link rel="stylesheet" href="/Questoes/questoes.css">
+    <link rel="stylesheet" href="../questoes.css">
+<link rel="stylesheet" href="../../assets/acessibilidade.css">
 </head>
 
-<body>
+<body class="bizu-quiz">
+<main>
+<div class="comeco">
+        <div class="numerador bizu-sr" id="progresso-questao">Questão 1</div>
 
-    <div class="comeco">
-        <div class="numerador">1.</div>
-
-        <h1 class="pergunta" id="pergunta"></h1>
+        <h1 class="pergunta" id="pergunta" tabindex="-1" aria-describedby="progresso-questao"></h1>
     </div>
 
     <div class="botoes">
         <ul>
-            <button onclick="responder(0)" id="bt1"></button>
+            <li><button onclick="responder(0)" id="bt1"></button></li>
 
-            <button onclick="responder(1)" id="bt2"></button>
+            <li><button onclick="responder(1)" id="bt2"></button></li>
 
-            <button onclick="responder(2)" id="bt3"></button>
+            <li><button onclick="responder(2)" id="bt3"></button></li>
 
-            <button onclick="responder(3)" id="bt4"></button>
+            <li><button onclick="responder(3)" id="bt4"></button></li>
         </ul>
 
     </div>
@@ -30,8 +33,8 @@
     <div>
         <p class="credito">@CREATED BY: BIZURADOS</p>
     </div>
-
-    <script>
+</main>
+<script>
         const perguntas = [
 
             {
@@ -59,10 +62,10 @@
             {
                 pergunta: "2:0 = ?",
                 respostas: [
-                    "",
-                    "",
-                    "",
-                    "",
+                    "0",
+                    "2",
+                    "1",
+                    "Não é definida"
                 ],
                 correta: 3
             },
@@ -86,7 +89,7 @@
                     "60",
                     "360",
                 ],
-                correta: 1
+                correta: 2
             },
 
             {
@@ -122,7 +125,7 @@
                     "tem que vê com os cara",
                 ],
 
-                correta: 3
+                correta: 0
             },
 
             
@@ -135,7 +138,7 @@
                     "8",
                 ],
 
-                correta: 0
+                correta: 3
             },
 
             {
@@ -173,17 +176,8 @@
             const btn4 = document.getElementById("bt4");
             btn4.innerText = perguntas[perguntaAtual].respostas[3];
 
-            if (perguntaAtual === 2) {
-                btn4.innerText = "";
-                btn4.dataset.hover = "indivisivel";
-                btn4.classList.add("hover-reveal");
-            } else {
-                btn4.dataset.hover = "";
-                btn4.classList.remove("hover-reveal");
-            }
-
             document.querySelector(".numerador").innerText =
-                (perguntaAtual + 1) + ".";
+                "Questão " + (perguntaAtual + 1) + " de " + perguntas.length;
         }
 
         function responder(opcao) {
@@ -195,10 +189,11 @@
                 if (perguntaAtual < perguntas.length) {
 
                     carregarPergunta();
+            document.getElementById("pergunta").focus();
 
                 } else {
 
-                    window.location.href = "../../parabens/parabens.html";
+                    window.location.href = "../../parabens/parabens.html?materia=" + encodeURIComponent("matematica");
 
                 }
 
@@ -212,7 +207,7 @@
 
         carregarPergunta();
     </script>
-
+<script src="../../assets/multimidia.js" data-bizu-multimidia="1" data-track="quiz" data-effect="start"></script>
 </body>
 
 </html>

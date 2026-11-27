@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
 <title>Créditos</title>
-<head>
+
   <link rel="stylesheet" href="rolagem.css">
+<link rel="stylesheet" href="../assets/acessibilidade.css">
+<link rel="stylesheet" href="creditos-auto.css">
 </head>
 
-<body>
-<audio autoplay> 
-    <source src="../songs/musicas para fim de video gameplay.mp3" type="audio/mpeg">
-</audio>
-<button class="botao-voltar" onclick="window.location.href='../Pasta-html/index.html'">Voltar</button>
+<body class="bizu-credits">
+<!-- INICIO: creditos automaticos BizuQuiz -->
+<nav class="bizu-credit-controls" aria-label="Controles dos créditos">
+<button type="button" onclick="location.href='../Pasta-html/index.html'">Voltar</button>
+<button type="button" id="bizu-scroll-toggle">Continuar créditos</button>
+
+</nav>
+<!-- FIM: creditos automaticos BizuQuiz -->
+
+
+
 
  <div class="rolagem">
    
@@ -46,7 +55,7 @@ VERSÃO BRASILEIRA: HERBERT RICHERS.
    </div>
 
 <div>
-           <h1>Created by:</h1>
+           <h1>Desenvolvido por:</h1>
    
    <p>Lider (Leonardo)</p>
    <p>Padrão (Maycol)</p>
@@ -66,52 +75,11 @@ Somos extremamente gratos também ao nosso antigo professor Matheus Lima, que se
      
      <video class="video"
        id="meuVideo"
-       src="credvideu.mp4"
-       muted
-       loop>
+       src="credvideu.mp4" controls aria-label="Vídeo dos créditos" muted loop playsinline autoplay preload="auto">
       </video>
      </div>
  </div>
- 
-<script>
-  
- const velocidade = 0.6
-const intervalo = 10;
-
-const video = document.getElementById("meuVideo");
-
-let pausado = false;
-let tempoScroll;
-
-
-// Parar de rolar a página quando chegar ao final
-const autoScroll = setInterval(() => {
-
-    if (pausado) return;
-
-    window.scrollBy(0, velocidade);
-
-    const alturaPagina = document.documentElement.scrollHeight;
-    const posicaoAtual = window.innerHeight + window.pageYOffset;
-
-    if (posicaoAtual >= alturaPagina) {
-        clearInterval(autoScroll);
-        video.play();
-    }
-
-}, intervalo);
-
-
-window.addEventListener("wheel", () => {
-    pausado = true;
-
-    clearTimeout(tempoScroll);
-
-    tempoScroll = setTimeout(() => {
-        pausado = false;
-    }, 1000);
-});
-</script>
- 
+<script src="../assets/multimidia.js" data-bizu-multimidia="1" data-track="credits" data-effect=""></script>
+<script src="creditos-auto.js" defer></script>
 </body>
 </html>

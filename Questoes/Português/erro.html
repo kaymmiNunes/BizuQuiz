@@ -124,22 +124,23 @@
     }
 
   </style>
+<link rel="stylesheet" href="../../assets/acessibilidade.css">
 </head>
 
-<body>
+<body class="bizu-result">
   <main role="main">
     <section class="card" aria-labelledby="titulo-derrota">
       
       <div class="visual" aria-hidden="true">
        
-        <img src="ninguem sabe oq se passa na mente do palhaço.png" alt="Ilustração de erro" />
+        <img src="ninguem%20sabe%20oq%20se%20passa%20na%20mente%20do%20palha%C3%A7o.png" alt="Ilustração de erro" />
        
         
       </div>
 
       <div class="meta">
-        <h1 id="titulo-derrota">O QUE FOI ISSO, SUA ABERRAÇÃO!!!</h1>
-        <p>Clique em <strong>Recomeçar</strong> para tentar ser alguem na vida.</p>
+        <h1 id="titulo-derrota">Fim de jogo!</h1>
+        <p>Resposta incorreta. Selecione Recomeçar para tentar novamente.</p>
 
         <div class="actions">
           <button type="button" class="btn primary" id="recomecar">Recomeçar</button>
@@ -154,7 +155,7 @@
     (function () {
       const goToStart = () => {
         // Usamos location.replace para evitar manter esta página no histórico
-        location.replace('../../../Questoes/Português/portugues.html');
+        location.replace('portugues.html');
       };
 
       const goToIndex = () => {
@@ -176,27 +177,11 @@
       });
     })();
   </script>
+<script src="../../assets/multimidia.js" data-bizu-multimidia="1" data-track="quiz" data-effect="fail"></script>
 </body>
 
- <audio id="efeito" src="../../songs/Fail 1.mp3"></audio>
+ 
 
-    <audio id="musica" src="" loop></audio>
 
-<script>
-
-window.onload = async () => {
-
-    const efeito = document.getElementById("efeito");
-    const musica = document.getElementById("musica");
-
-    await efeito.play();
-
-    efeito.onended = () => {
-        musica.play();
-    }
-
-}
-
-</script>
 
 </html>
