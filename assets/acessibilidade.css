@@ -162,3 +162,93 @@ body.bizu-menu {
   }
 }
 /* FIM: menu responsivo BizuQuiz */
+
+/* INICIO: easter egg discreto BizuQuiz */
+body.bizu-menu {
+  position: relative;
+  padding-bottom: max(3.5rem, env(safe-area-inset-bottom, 0px));
+}
+/* Área clicável de 44px, mas apenas um pequeno ponto visível. */
+body.bizu-menu button.easter {
+  position: absolute;
+  inset: auto max(.25rem, env(safe-area-inset-right, 0px)) max(.25rem, env(safe-area-inset-bottom, 0px)) auto;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: none;
+  cursor: pointer;
+  transform: none;
+}
+body.bizu-menu button.easter::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #805326;
+  box-shadow: 0 0 0 1px #fff;
+}
+body.bizu-menu button.easter:hover,
+body.bizu-menu button.easter:focus-visible {
+  background: transparent;
+  transform: none;
+}
+body.bizu-menu button.easter:hover::before,
+body.bizu-menu button.easter:focus-visible::before {
+  width: 10px;
+  height: 10px;
+  background: #573515;
+}
+body.bizu-menu button.easter:focus-visible {
+  outline: 3px solid #154ec1 !important;
+  outline-offset: 2px;
+}
+/* FIM: easter egg discreto BizuQuiz */
+
+/* INICIO: centralizacao das questoes BizuQuiz */
+body.bizu-quiz {
+  min-height: 100vh;
+  min-height: 100dvh;
+  height: auto;
+  margin: 0;
+  padding: clamp(1rem, 3vw, 2rem);
+  display: flex;
+  flex-direction: column;
+}
+body.bizu-quiz > main {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 60rem;
+  min-width: 0;
+  margin: auto;
+  text-align: center;
+  gap: clamp(1rem, 3vh, 1.75rem);
+}
+body.bizu-quiz .pergunta {
+  margin: 0 auto;
+  overflow-wrap: anywhere;
+}
+body.bizu-quiz .botoes ul {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0;
+}
+body.bizu-quiz .credito {
+  margin: 0;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  body.bizu-quiz .botoes ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+/* FIM: centralizacao das questoes BizuQuiz */
