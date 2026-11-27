@@ -101,7 +101,7 @@
   update();
   play();
 
-  if (!document.body.classList.contains('bizu-credits')) return;
+  if (!document.body.classList.contains('bizu-credits') || document.getElementById('bizu-scroll-toggle')) return;
   const video = document.getElementById('meuVideo');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   let running = !reduced.matches;

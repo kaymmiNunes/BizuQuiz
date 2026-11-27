@@ -7,11 +7,20 @@
 
   <link rel="stylesheet" href="rolagem.css">
 <link rel="stylesheet" href="../assets/acessibilidade.css">
+<link rel="stylesheet" href="creditos-auto.css">
 </head>
 
 <body class="bizu-credits">
+<!-- INICIO: creditos automaticos BizuQuiz -->
+<nav class="bizu-credit-controls" aria-label="Controles dos créditos">
+<button type="button" onclick="location.href='../Pasta-html/index.html'">Voltar</button>
+<button type="button" id="bizu-scroll-toggle">Continuar créditos</button>
 
-<button class="botao-voltar" onclick="window.location.href='../Pasta-html/index.html'">Voltar</button>
+</nav>
+<!-- FIM: creditos automaticos BizuQuiz -->
+
+
+
 
  <div class="rolagem">
    
@@ -66,7 +75,7 @@ Somos extremamente gratos também ao nosso antigo professor Matheus Lima, que se
      
      <video class="video"
        id="meuVideo"
-       src="credvideu.mp4" controls aria-label="Vídeo dos créditos" muted loop playsinline preload="metadata">
+       src="credvideu.mp4" controls aria-label="Vídeo dos créditos" muted loop playsinline autoplay preload="auto">
       </video>
 
       <button class="botao-voltar" onclick="window.location.href='../Pasta-html/index.html'">Voltar</button>
@@ -74,5 +83,6 @@ Somos extremamente gratos também ao nosso antigo professor Matheus Lima, que se
      </div>
  </div>
 <script src="../assets/multimidia.js" data-bizu-multimidia="1" data-track="credits" data-effect=""></script>
+<script src="creditos-auto.js" defer></script>
 </body>
 </html>
