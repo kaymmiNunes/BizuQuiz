@@ -3,7 +3,7 @@
   'use strict';
   const script = document.currentScript;
   if (!script || !document.body) return;
-  const root = new URL('../', script.src);
+  const root = new URL('../../', script.src);
   const files = {
     menu: "Naruto - Konohamaru's Theme (128 kbps).mp3",
     quiz: 'Bully - Walk Theme - [Music] (HD)(MP3_320K).mp3',
