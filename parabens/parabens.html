@@ -6,141 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parabéns — Bizu Quiz</title>
 
-    <style>
-        :root {
-            --bg-start: #ffffff;
-            --bg-end: #ffffff;
-            --accent: #000000;
-            --btn: #f1c40f;
-            --text: #f1c40f;
-        }
+    <link rel="stylesheet" href="../assets/css/vitoria.css">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        body {
-            background: linear-gradient(180deg, var(--bg-start), var(--bg-end));
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 25px;
-        }
-
-        .card {
-            width: 100%;
-            max-width: 950px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, .35);
-            display: flex;
-            gap: 30px;
-            align-items: center;
-            padding: 25px;
-        }
-
-        .visual {
-            flex: 1;
-            text-align: center;
-        }
-
-        .visual img {
-            width: 100%;
-            max-width: 420px;
-            border: 6px solid var(--accent);
-            border-radius: 10px;
-            transition: .3s;
-        }
-
-        .visual img:hover {
-            transform: rotate(-2deg) scale(1.03);
-        }
-
-        .meta {
-            flex: 1;
-        }
-
-        h1 {
-            color: var(--accent);
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
-
-        h2 {
-            margin-bottom: 20px;
-            font-size: 28px;
-        }
-
-        p {
-            font-size: 19px;
-            line-height: 1.7;
-            margin-bottom: 18px;
-        }
-
-        .destaque {
-            font-size: 23px;
-            font-weight: bold;
-            color: #000000;
-        }
-
-        .actions {
-            display: flex;
-            gap: 15px;
-            margin-top: 25px;
-            flex-wrap: wrap;
-        }
-
-        button {
-            border: none;
-            cursor: pointer;
-            padding: 14px 24px;
-            font-size: 17px;
-            font-weight: bold;
-            border-radius: 8px;
-            transition: .25s;
-        }
-
-        .primary {
-            background: var(--btn);
-            color: rgb(0, 0, 0);
-        }
-
-        .secondary {
-            background: #6f00ff;
-            color: rgb(0, 0, 0);
-        }
-
-        button:hover {
-            transform: scale(1.05);
-        }
-
-        @media(max-width:900px) {
-
-            .card {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .actions {
-                justify-content: center;
-            }
-
-            h1 {
-                font-size: 42px;
-            }
-
-            h2 {
-                font-size: 24px;
-            }
-
-        }
-    </style>
-
-<link rel="stylesheet" href="../assets/acessibilidade.css">
+<link rel="stylesheet" href="../assets/css/acessibilidade.css">
 </head>
 
 <body class="bizu-result">
@@ -180,26 +48,8 @@
 
     </div>
 
-    <script>
-
-        document.getElementById("recomecar").onclick = () => {
-
-            const materia = new URLSearchParams(location.search).get("materia");
-            const rotas = {"Informatica": "Informatica/info.html", "Português": "Português/portugues.html", "artes": "artes/artes.html", "historia": "historia/historia.html", "matematica": "matematica/matematica.html", "quimica": "quimica/quimica.html"};
-            location.replace(Object.hasOwn(rotas, materia) ? "../Questoes/" + rotas[materia] : "../Pasta-html/escolhas-maycol/escolha_materias.html");
-
-        }
-
-        document.getElementById("voltar").onclick = () => {
-
-            location.replace("../Pasta-html/index.html");
-
-        }
-
-        
-
-    </script>
-<script src="../assets/multimidia.js" data-bizu-multimidia="1" data-track="menu" data-effect="win"></script>
+    <script src="../assets/js/vitoria.js"></script>
+<script src="../assets/js/multimidia.js" data-bizu-multimidia="1" data-track="menu" data-effect="win"></script>
 </body>
 
 </html>

@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Português</title>
-  <link rel="stylesheet" href="../questoes.css">
-<link rel="stylesheet" href="../../assets/acessibilidade.css">
+  <link rel="stylesheet" href="../../assets/css/quiz.css">
+<link rel="stylesheet" href="../../assets/css/acessibilidade.css">
 </head>
 
 <body class="bizu-quiz">
@@ -34,168 +34,9 @@
         <p class="credito">@CREATED BY: BIZURADOS</p>
     </div>
 </main>
-<script>
-
-    const perguntas = [
-
-      {
-        pergunta: "Na frase 'O sujeito foi preso porque roubou um dicionário', onde está o sujeito?",
-        respostas: [
-          "No dicionário",
-          "Na cadeia",
-          "Oculto",
-          "É um sujeito simples"
-        ],
-        correta: 1
-      },
-
-      {
-        pergunta: 'Qual é o sujeito da oração "Os alunos estudaram para a prova"?',
-        respostas: [
-          "Estudaram",
-          "Para prova",
-          "Os alunos",
-          "Prova"
-        ],
-        correta: 2
-      },
-
-      {
-        pergunta: `Na frase "João comeu o bolo inteiro", quem saiu mais prejudicado?`,
-        respostas: [
-          "João",
-          "O bolo",
-          "Quem chegou depois",
-          "O nutricionista"
-        ],
-        correta: 2
-      },
-
-       {
-        pergunta: `Na frase "Já é quase 5 da manhã", onde está o erro?`,
-        respostas: [
-          "Já",
-          "case, quase, né?",
-          "o horário",
-          "Não possui"
-        ],
-        correta: 3
-      },
-      {
-        pergunta:'Complete a frase: "A gente ___ para a praia."',
-        respostas: [
-          "Fomos",
-          "foi",
-          "Foiemos",
-          "Fim"
-        ],
-        correta: 1
-      },
-      {
-        pergunta: 'Qual alternativa usa o "por que" corretamente?',
-        respostas: [
-          "Por que você faltou?",
-          "Porque você faltou?",
-          "Porquê você faltou?",
-          "purque você veio"
-        ],
-        correta: 0
-      },
-      {
-        pergunta: 'Qual frase está correta?',
-        respostas: [
-          "Eu se machuquei",
-          "Eu mim machuquei",
-          "Eu me machuquei",
-          "Mim machucar eu"
-        ],
-        correta: 2
-      },
-      {
-        pergunta: '"O vento sussurrava nos meus ouvidos." Qual é a figura de linguagem presente na frase?',
-        respostas: [
-          "Metáfora",
-          "Catacrese",
-          "Prosopopeia",
-          "Antítese"
-        ],
-        correta: 2
-      },
-        {
-        pergunta: 'Qual é o plural correto de "segunda-feira"?',
-        respostas: [
-          "Segunda-feiras",
-          "Segundas-feira",
-          "Segundas-feiras",
-          "Segunda-feira"
-        ],
-        correta: 2
-      },
-       {
-        pergunta: 'A palavra "passarinho" possui quantas sílabas?',
-        respostas: [
-          "2",
-          "3",
-          "4",
-          "67"
-        ],
-        correta: 2
-      },
-
-    ];
-
-    let perguntaAtual = 0;
-
-    function carregarPergunta() {
-
-      document.getElementById("pergunta").innerText =
-        perguntas[perguntaAtual].pergunta;
-
-      document.getElementById("bt1").innerText =
-        perguntas[perguntaAtual].respostas[0];
-
-      document.getElementById("bt2").innerText =
-        perguntas[perguntaAtual].respostas[1];
-
-      document.getElementById("bt3").innerText =
-        perguntas[perguntaAtual].respostas[2];
-
-      document.getElementById("bt4").innerText =
-        perguntas[perguntaAtual].respostas[3];
-
-      document.querySelector(".numerador").innerText =
-        "Questão " + (perguntaAtual + 1) + " de " + perguntas.length;
-    }
-
-    function responder(opcao) {
-
-      if (opcao === perguntas[perguntaAtual].correta) {
-
-        perguntaAtual++;
-
-        if (perguntaAtual < perguntas.length) {
-
-          carregarPergunta();
-            document.getElementById("pergunta").focus();
-
-        } else {
-
-          window.location.href = "../../parabens/parabens.html?materia=" + encodeURIComponent("Português");
-
-        }
-
-      } else {
-
-        window.location.href = "erro.html";
-
-      }
-
-    }
-
-    carregarPergunta();
-
-  </script>
-<script src="../../assets/multimidia.js" data-bizu-multimidia="1" data-track="quiz" data-effect="start"></script>
+<script src="../../assets/data/questoes/portugues.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/multimidia.js" data-bizu-multimidia="1" data-track="quiz" data-effect="start"></script>
 </body>
 
 

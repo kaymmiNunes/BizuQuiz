@@ -51,3 +51,8 @@ Desenvolvedores:
 - Victor
 - Maycol
 
+## Organização técnica
+
+Os arquivos de estilo e comportamento foram centralizados em `assets/css/` e `assets/js/`. Os bancos das seis disciplinas estão em `assets/data/questoes/`. As rotas HTML e mídias originais permanecem nos caminhos anteriores. Consulte [a arquitetura](docs/arquitetura.md).
+
+Teste de regressão: `node tests/quiz.test.cjs`. Para executar localmente: `python -m http.server 8000`.
